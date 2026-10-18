@@ -17,7 +17,7 @@ class CustomerController extends Controller
             'email'=> 'required',
             'picture'=> 'required | image',
             'password'=> 'required | min:5',
-        ]);
+        ]); 
         if($request->hasFile('picture')){
             $picture = $request->file('picture')->getClientOriginalName();
             $request->file('picture')->move('uploads/profiles/',$picture);
