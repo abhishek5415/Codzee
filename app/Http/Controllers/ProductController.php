@@ -17,7 +17,7 @@ class ProductController extends Controller
         $newArrivals = Product::where('type','new-arrivals')->get();
         $hotSales = Product::where('type','hot-sales')->get();
         $wishlist = Wishlist::where('customerId', session()->get('id'))->pluck('productId')->toArray();
-        return view('Customer.index',compact('bestSellers','newArrivals','hotSales','wishlist'));
+        return view('Customer.index',compact('bestSellers','newArrivals','hotSales','wishlist')); 
     }
 
     public function productView($id){
